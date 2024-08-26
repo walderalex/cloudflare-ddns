@@ -67,6 +67,7 @@ async function main() {
       const error = await response.json();
       parseError(error);
     }
+    console.log(`Updated ip -> ${ip}`);
   } else {
     const response = await fetch(
       `https://api.cloudflare.com/client/v4/zones/${zoneId}/dns_records`,
@@ -87,6 +88,7 @@ async function main() {
       const error = await response.json();
       parseError(error);
     }
+    console.log(`Created record with ip -> ${ip}`);
   }
 }
 
